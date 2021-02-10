@@ -1,0 +1,263 @@
+% -----------------------------------------
+% TABELA - SUMÁRIO DOS ARTIGOS ANALISADOS
+% -----------------------------------------
+\begin{table}[h]
+\centering
+\caption{Sumário de todos os artigos analisados}
+\label{tab:sumario_artigos_selecionados}
+%\resizebox{\textwidth}{!}{%
+\footnotesize
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+\textbf{Artigo} &
+  \textbf{Ano de publicação} &
+  \textbf{País de afiliação dos autores} &
+  \textbf{Técnicas de pré-processamento de imagens} &
+  \textbf{Técnica de transferência de aprendizado} &
+  \textbf{Técnica de aumento de dados} &
+  \textbf{Modelo de Arquitetura da CNN} &
+  \textbf{Modelo do classificador} \\ \hline
+\cite{liu2020classification} &
+  2020 &
+  Estados Unidos &
+  Não aplicado &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Skewing\\ Elastic distortion\\ Rotation\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}LeNet-5\\ AlexNet\\ VGG-16\\ VGG-19\\ ResNet-50\\ Inception v3\\ InceptionResNet v2\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{le2020automated} &
+  2020 &
+  França & 
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Normalization\end{tabular} &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Constant to each channel\\ Split the channels of image\end{tabular} &
+  EB-Net &
+  Camada totalmente conectada \\ \hline
+\cite{zhangautomatic} &
+  2020 &
+  China &
+  Não especificado &
+  Não especificado &
+  Não especificado &
+  DenseNet-121 &
+  - \\ \hline
+\cite{liu2020grape} &
+  2020 &
+  China &
+  Não aplicado &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}High brightness\\ Low brightness\\ High contrast\\ Low contrast\\ High sharpness\\ Low sharpness\\ Rotation\\ Vertical symmetry\\ Horizontal symmetry\\ Gaussian noise\\ PCA Jittering\end{tabular} &
+  DICNN &
+  Não especificado \\ \hline
+\cite{lu2020identifying} &
+  2020 &
+  Taiwan &
+  Resize &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Horizontal flipping\\ Vertical flipping\\ Width shifting\\ Height shifting\\ Rotation\\ Shearing\\ Zooming\end{tabular} &
+  VGG-16 &
+  Camada totalmente conectada \\ \hline
+\cite{banan2020deep} &
+  2020 &
+  Irã &
+  Resize &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Rotation\\ Height shifting\\ Width shifting\end{tabular} &
+  VGG-16 &
+  Camada totalmente conectada \\ \hline
+\cite{tiwari2020comparative} &
+  2020 &
+  India &
+  Não especificado &
+  Não aplicado &
+  Não aplicado &
+  CNN &
+  Camada totalmente conectada \\ \hline
+\cite{li2020using} &
+  2020 &
+  China &
+  \begin{tabular}[c]{@{}l@{}}Cropping\\ Resize\end{tabular} &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}Rotation\\ Clipping\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}VGG-16\\ Inception v3\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{chen2020research} &
+  2020 &
+  China &
+  Resize &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Rotation\\ Blurred\\ Occluded\end{tabular} &
+  ResNeXt-101 &
+  Camada totalmente conectada \\ \hline
+\cite{hongclassification} &
+  2020 &
+  China &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Cropping\\ Normalization\end{tabular} &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}Gaussian filter\\ Contrast enhancement\end{tabular} &
+  AlexNet &
+  Camada totalmente conectada \\ \hline
+\cite{rauf2019visual} &
+  2019 &
+  \begin{tabular}[c]{@{}l@{}}Paquistão\\ Estados Unidos\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Transparent background\end{tabular} &
+  Não aplicado &
+  Não aplicado &
+  32-Layer CNN &
+  Camada totalmente conectada \\ \hline
+\cite{gomez2019coral} &
+  2019 &
+  \begin{tabular}[c]{@{}l@{}}Espanha\\ Dinamarca\end{tabular} &
+  Não especificado &
+  Fine-tuning &
+  Não especificado &
+  \begin{tabular}[c]{@{}l@{}}Inception v3\\ ResNet-50\\ ResNet-152\\ DenseNet-121\\ DenseNet-161\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{cibuk2019efficient} &
+  2019 &
+  \begin{tabular}[c]{@{}l@{}}Turquia\\ Estados Unidos\end{tabular} &
+  Não aplicado &
+  Feature transfer &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}VGG-16\\ AlexNet\end{tabular} &
+  SVM (Kernel RBF) \\ \hline
+\cite{li2019effective} &
+  2019 &
+  China &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Normalization\end{tabular} &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}Multi-scale\\ Rotation\end{tabular} &
+  ResNet-50 &
+  Camada totalmente conectada \\ \hline
+\cite{khalifa2019deep} &
+  2019 &
+  \begin{tabular}[c]{@{}l@{}}Egito\\ Luxemburgo\end{tabular} &
+  Não especificado &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}Reflection\\ Zooming\\ Gaussian noise\\ Poisson noise\\ Salt\\ Pepper noise\\ Speckle noise\end{tabular} &
+  CNN &
+  Camada totalmente conectada \\ \hline
+\cite{hsiang2019endless} &
+  2019 &
+  \begin{tabular}[c]{@{}l@{}}Suécia\\ Reino Unido\end{tabular} &
+  Resize &
+  Fine-tuning &
+  Não especificado &
+  \begin{tabular}[c]{@{}l@{}}VGG-16\\ DenseNet-121\\ Inception v3\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{ren2019feature} &
+  2019 &
+  Japão &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Cropping\\ Normalization\end{tabular} &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Cropping\\ Normalization\end{tabular} &
+  FR-ResNet &
+  Camada totalmente conectada \\ \hline
+\cite{valan2019automated} &
+  2019 &
+  Suécia &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Cropping\end{tabular} &
+  Feature transfer &
+  Não aplicado &
+  VGG-16 &
+  SVM (Linear) \\ \hline
+\cite{gyires2019deep} &
+  2019 &
+  Hungria &
+  \begin{tabular}[c]{@{}l@{}}cropping\\ resize\\ normalization\end{tabular} &
+  Fine-tuning &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}AlexNet\\ Inception V3\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{thenmozhi2019crop} &
+  2019 &
+  India &
+  \begin{tabular}[c]{@{}l@{}}Gray scale\\ Canny Edge Detection\\ Cropping\\ Resize\end{tabular} &
+  Fine-tuning &
+  \begin{tabular}[c]{@{}l@{}}reflection\\ scaling\\ rotation\\ translation\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}VGG-16\\ VGG-19\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{tetila2019deep} &
+  2019 &
+  Brasil &
+  Não especificado &
+  \begin{tabular}[c]{@{}l@{}}Fine-tuning\\ Feature transfer\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Rotation\\ Scaling\\ Scrolling\\ Zooming\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}DenseNet-201\\ InceptionResNet v2\\ ResNet-50\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{wei2018deep} &
+  2018 &
+  Malasia &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Padding\end{tabular} &
+  Não aplicado &
+  Não aplicado &
+  D-Leaf &
+  Camada totalmente conectada \\ \hline
+\cite{zhu2018method} &
+  2018 &
+  China &
+  Não especificado &
+  Não aplicado &
+  Não aplicado &
+  Inception v2 &
+  Camada totalmente conectada \\ \hline
+\cite{zhu2018plant} &
+  2018 &
+  China &
+  Resize &
+  Não especificado &
+  Não aplicado &
+  CNN &
+  SVM (Linear) \\ \hline
+\cite{villon2018deep} &
+  2018 &
+  França &
+  Não especificado &
+  Não aplicado &
+  Não aplicado &
+  GoogLeNet &
+  Camada totalmente conectada \\ \hline
+\cite{lee2017deep} &
+  2017 &
+  \begin{tabular}[c]{@{}l@{}}Malásia\\ Reino Unido\end{tabular} &
+  Resize &
+  Fine-tuning &
+  Rotation &
+  CNN &
+  Camada totalmente conectada \\ \hline
+\cite{zielinski2017deep} &
+  2017 &
+  Polônia &
+  Não especificado &
+  Feature transfer &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}AlexNet\\ VGG-M\\ VGG-VD\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SVM (Linear)\\ SVM (RBF)\\ SVM (Polinomial)\\ Random Forest\end{tabular} \\ \hline
+\cite{wang2017crop} &
+  2017 &
+  China &
+  Não especificado &
+  Não especificado &
+  Não aplicado &
+  \begin{tabular}[c]{@{}l@{}}LeNet-5\\ AlexNet\end{tabular} &
+  Camada totalmente conectada \\ \hline
+\cite{lim2017performance} &
+  2017 &
+  Coreia do Sul &
+  \begin{tabular}[c]{@{}l@{}}Resize\\ Cropping\end{tabular} &
+  Não especificado &
+  \begin{tabular}[c]{@{}l@{}}Rotation\\ Zooming\end{tabular} &
+  AlexNet &
+  Camada totalmente conectada \\ \hline
+\cite{sun2017deep} &
+  2017 &
+  China &
+  Não especificado &
+  Não aplicado &
+  Não aplicado &
+  ResNet-26 &
+  Camada totalmente conectada \\ \hline
+\end{tabular}%
+%}
+\source{Danilo Assunção, 2021}
+\end{table}
