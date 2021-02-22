@@ -643,16 +643,16 @@ Keywords: Keyword1. Keyword2. Keyword3. etc.
 %
 %-------------------------------------------------------------------------
 \begin{siglas}
-  \item[Sigla/abreviatura 1] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 2] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 3] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 4] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 5] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 6] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 7] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 8] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 9] Definição da sigla ou da abreviatura por extenso
-  \item[Sigla/abreviatura 10] Definição da sigla ou da abreviatura por extenso
+  \item[CNN] Convolutional Neural Network
+  \item[RBF] Radius Basis Function
+  \item[SVM] Support Vector Machine
+  \item[ANN] Artificial Neural Network
+  \item[ReLU] Rectified Linear Unit
+  \item[VGG] Visual Geometry Group
+  \item[ResNet] Residual Neural Network
+  \item[RGB] Red, Green and Blue
+  \item[MNIST] Modified National Institute of Standards and Technology
+  \item[GAN] Generative Adversarial Networks
 \end{siglas}
 % ---
 
@@ -926,183 +926,173 @@ A figura \ref{fig:figura-exemplo5} é um exemplo de como apresentar ilustraçõe
 
 Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
 
+% ----------------------------------------------------------
+% CAPITULO - CONCEITOS FUNDAMENTAIS
+% ----------------------------------------------------------
+
 \chapter{Conceitos fundamentais}
 
-Este capítulo apresenta alguns conceitos básicos de processamento de imagens e inteligência artificial necessários para compreender este documento.
+Neste capitulo são apontados alguns tópicos elementares para a compreensão deste projeto. Todos os conceitos aqui abordados são pertinentes à área de Visão computacional. Dessa forma, primeiro é realizada uma curta introdução ao tema de Visão computacional, logo depois são apresentados as definições referentes às redes neurais artificiais, CNN, técnicas de aprendizado por transferência e aumento de dados.
 
-Atenção ao fazer citações a referências para garantir o uso da forma correta, considerando os seguintes exemplos:
+\section{Visão computacional}
+
+Segundo \citeonline{de2014visao}, a visão computacional é a ciência responsável pela visão de uma máquina, pela forma como um computador enxerga o ambiente à sua volta, extraindo informações significativas a partir de imagens capturadas por câmeras de vídeo, sensores, escâneres, entre outros dispositivos. Estas informações permitem reconhecer, manipular e pensar sobre os objetos que compõem uma imagem. Dessa forma, a visão computacional fornece ao computador uma infinidade de informações precisas a partir de imagens e vídeos, de forma que o computador consiga executar tarefas inteligentes, simulando e aproximando-se do comportamento visual do ser humano. A seguir são apresentados algumas das funcionalidades comuns na maioria dos sistemas de visão computacional:
+
 \begin{itemize}
-	\item Se desejar que uma citação a uma referência apareça no final da frase, use com o comando ``cite''. Exemplo: ``Tal coisa é muito melhor do que aquela outra coisa \cite{teste1, teste2}''.
-	\item Se desejar que uma citação a uma referência apareça no meio da frase, como parte da própria frase, use o comando ``citeonline''. Exemplo: ``De acordo com \citeonline{teste3}, tal coisa é muito melhor do que aquela outra coisa.''
-	\item \textbf{Atenção} - nunca usar o comando ``cite'' para citações a referências que aparecem no meio da frase, como parte da própria frase. Exemplo - nunca fazer assim: ``De acordo com \cite{teste3}, tal coisa é muito melhor do que aquela outra coisa.''
+  \item Aquisição de Imagem: é o primeiro passo para um sistema de visão computacional. Trata-se do processo para a aquisição de uma imagem ou um conjunto de imagens a partir de sensores de câmeras, onde os pixeis em cada imagem (bidimensional, tridimensional ou uma sequência de imagens) obtida indicam coordenadas de luz e propriedades físicas \cite{de2014visao};
+  
+  \item Pré-processamento: processo realizado antes de obter informações de uma imagem, para assim, aplicar métodos específicos que facilitem a identificação de um objeto, tendo como exemplo destaques de contornos, bordas, destaques de figuras geométricas, e dentre outras técnicas \cite{de2014visao};
+  
+  \item Extração de características: constitui na extração das composições de uma imagem, obtendo matematicamente tais características como textura, bordas, formatos e movimento \cite{de2014visao};
+  
+  \item Detecção e segmentação: Processo realizado para destacar regiões relevantes da imagem, segmentado-as para o processamento posterior \cite{de2014visao};
+  
+  \item Classificação e validação: processo que inclui a validação da satisfação dos dados obtidos, a estimativa de parâmetros sobre a imagem e a classificação dos objetos obtidos em diferentes categorias \cite{de2014visao}.
 \end{itemize}
 
-O algoritmo \ref{alg:algoritmo-exemplo1} é um exemplo de como apresentar ilustrações de acordo com essa norma. Qualquer outra ilustração deve ser apresentada de forma similar, mudando apenas o prefixo do título e a numeração. Veja mais detalhes no anexo \ref{anexoA} deste documento.
+\section{Redes neurais artificias}
 
-%-------------------------------------------------------------------------
-% Comentário adicional do PPgSI - Informações sobre ``algoritmo''
-% 
-% Caption(Título) de tabelas e ilustração (tais como figura, gráfico, 
-% algoritmo, fotografia, quadro etc.) sempre acima da própria.
-%
-% Para todos os captions/(títulos) (de seções, subseções, tabelas, 
-% ilustrações, etc.):
-%     - em maiúscula apenas a primeira letra da sentença (do título), 
-%       exceto nomes próprios, geográficos, institucionais ou Programas ou
-%       Projetos ou siglas, os quais podem ter letras em maiúscula também.
-%
-% Fonte de ilustração (tais como figura, gráfico, algoritmo, fotografia, 
-% quadro etc.) sempre abaixo da própria.
-%      - se a fonte for o próprio autor, colocar o nome dele. 
-%      - se a fonte for outro autor, citar sua referência.
-%
-% Todas  as tabelas, ilustrações (figuras, quadros, gráficos etc. ), 
-% anexos, apêndices devem obrigatoriamente ser citados no texto.
-%      - a citação deve vir sempre antes da primeira vez em que a tabela, 
-%        ilustração etc., aparecer pela primeira vez.
-%
-%-------------------------------------------------------------------------
-\begin{algorithm}[htbp]
-\caption{Exemplo de título de ilustração do tipo algoritmo, que pode ser maior para apresentar mais explicações sobre o conteúdo do algoritmo, se for o caso}
-\label{alg:algoritmo-exemplo1}
-\begin{algorithmic}[1]
-\Procedure{MyProcedure}{}
-\State $passo-1$
-\State $passo-2$
-\State $passo-3$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $passo-n$
-\EndProcedure
-\end{algorithmic}
-\source{Marcelo Fantinato, 2015}
-\end{algorithm}
+No artigo de \citeonline{o2015introduction}, redes neurais artificiais (\textit{artificial neural networks} - ANNs) são sistemas de processamento computacional que são fortemente inspirados pelo modo como os sistemas nervosos biológicos (como o cérebro humano) operam. As ANNs são compostas principalmente por um grande número de nós computacionais interconectados (referidos como neurônios), dos quais trabalham entrelaçados de forma distribuída para aprender coletivamente a partir da entrada, a fim de otimizar sua saída final. A estrutura básica de uma ANN pode ser modelada como mostrado na Figura \ref{fig:artificial_neural_networks_arch}. 
 
+\begin{figure}[H]
+    \centering
+    \caption{Arquitetura de uma rede neural artificial}
+    \includegraphics[scale=.10]{imagens/artificial_neural_networks_arch.png}
+    \label{fig:artificial_neural_networks_arch}
+    \source{https://en.wikipedia.org/wiki/Artificial\_neural\_network}
+\end{figure}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Na Figura \ref{fig:artificial_neural_networks_arch}, é introduzido uma rede neural \textit{feedforward} simples de três camadas, composta por uma camada de entrada (\textit{Input}), uma camada oculta (\textit{Hidden}) e uma camada de saída (\textit{Output}). Essa estrutura é a base de uma série de arquiteturas comuns de ANN \cite{o2015introduction}.
 
-\section{Uma seção secundária}
+A entrada é carregada geralmente na forma de um vetor multidimensional que será distribuída para as camadas ocultas da rede. As camadas ocultas tomarão decisões a partir da camada anterior e avaliarão como uma mudança estocástica em si mesma avaliando se o resultado prejudica ou melhora o valor final obtido, e isso é conhecido como o processo de aprendizagem \cite{o2015introduction}. 
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Existem duas ramificações para determinação de um modelo de classificação para as redes neurais artificiais, estes paradigmas são denominados como aprendizado supervisionado e aprendizado não supervisionado.
 
-As fórmulas \ref{eq:equacao-exemplo1} e \ref{eq:equacao-exemplo2} são exemplos de como apresentar fórmulas e equações destacadas do parágrafo normal do texto. Veja mais detalhes no anexo \ref{anexoA} deste documento.
+\subsection{Aprendizado supervisionado}
+Aprendizagem supervisionada é a aprendizagem por meio de entradas pré-rotuladas, que atuam como alvos. Para cada exemplo de treinamento, haverá um conjunto de valores de entrada (vetores) e um ou mais valores de saída designados associados. O objetivo desta forma de treinamento é reduzir o erro geral de classificação dos modelos, por meio do cálculo correto do valor de saída do treinamento \cite{o2015introduction}.
 
-\begin{equation}
-  X + Y = Z
-	\label{eq:equacao-exemplo1}
-\end{equation}
+\subsection{Aprendizado não supervisionado}
+A aprendizagem não supervisionada difere do modelo supervisionado, porque o conjunto de treinamento não inclui nenhum rótulo. O sucesso geralmente é determinado pela capacidade da rede de reduzir ou aumentar uma função de custo associada. No entanto, é importante notar que a maioria das tarefas de reconhecimento de padrões focadas em imagens geralmente dependem de classificação usando aprendizado supervisionado \cite{o2015introduction}.
 
-\begin{equation}
-  (X - Y)/5 = n
-	\label{eq:equacao-exemplo2}
-\end{equation}
+\section{Aprendizado profundo}
 
+Com base no artigo de \citeonline{lecun2015deep}, o aprendizado profundo é uma forma de aprendizado de máquina que permite que os computadores aprendam com a experiência e entendam o mundo em termos de uma hierarquia de conceitos. Como o computador reúne conhecimento com base na experiência, não há necessidade de um operador humano especificar formalmente todo o conhecimento necessário ao computador. A hierarquia de conceitos permite que o computador aprenda conceitos complicados, construindo-os a partir de outros mais simples; um gráfico dessas hierarquias teria muitas camadas de profundidade.
 
-O algoritmo \ref{alg:algoritmo-exemplo2} é um exemplo de como apresentar ilustrações de acordo com essa norma. Qualquer outra ilustração deve ser apresentada de forma similar, mudando apenas o prefixo do título e a numeração. Veja mais detalhes no anexo \ref{anexoA} deste documento.
+\section{Redes neurais convolucionais}
 
-\begin{algorithm}[htbp]
-\caption{Exemplo de título de ilustração do tipo algoritmo}
-\label{alg:algoritmo-exemplo2}
-\begin{algorithmic}[1]
-\Procedure{MyProcedure}{}
-\State $passo-1$
-\State $passo-2$
-\State $passo-3$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $passo-n$
-\EndProcedure
-\end{algorithmic}
-\source{Marcelo Fantinato, 2015}
-\end{algorithm}
+Conforme é mencionado por \citeonline{o2015introduction}, as redes neurais convolucionais são análogas às ANN tradicionais, pois são compostas de neurônios que se auto-otimizam por meio do aprendizado. Cada neurônio ainda receberá uma entrada e realizará uma operação (como um produto escalar seguido por uma função não linear) a base de inúmeras ANNs. Dos vetores das imagens de entrada até a saída final da pontuação da respectiva classe, toda a rede ainda expressará uma única função de pontuação perceptiva (o peso). A última camada conterá funções de perda associadas às classes, e todos os truques desenvolvidos para ANNs tradicionais ainda se aplicarão para este modelo de rede profunda.
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+A diferença notável entre CNNs e ANNs tradicionais é que as CNNs são usadas principalmente no campo de reconhecimento de padrões em imagens. Isso nos permite codificar recursos específicos da imagem na arquitetura, tornando a rede mais adequada para tarefas focadas na imagem.
 
-\subsection{Uma seção terciária}
+\subsection{Arquitetura da CNN}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Conforme abordado anteriormente, as CNNs se concentram principalmente no fato de que a entrada será composta de imagens. Isso enfoca a arquitetura a ser configurada de forma a se adequar melhor à necessidade de lidar com o tipo específico de dados. Uma das principais diferenças é que os neurônios que compõem as camadas dentro da CNN são compostos de neurônios organizados em três dimensões, a dimensão espacial da entrada (altura e largura) e a profundidade \cite{o2015introduction}. A profundidade não se refere ao número total de camadas dentro da CNN, mas à terceira dimensão de um volume de ativação. Ao contrário do ANNs padrões, os neurônios em qualquer camada se conectarão apenas a uma pequena região da camada anterior. Na prática, isso significaria que, o ``volume'' de entrada terá a dimensionalidade de uma imagem, por exemplo, uma imagem 64x64 corresponderia a um vetor de dimensão igual a 64 × 64 × 3 (altura, largura e profundidade), levando a uma camada de saída final composta por uma dimensionalidade de 1 × 1 × n (onde n representa o número possível de classes), pois teríamos condensado a dimensionalidade total de entrada em um volume menor de pontuações de classe arquivadas na dimensão de profundidade \cite{o2015introduction}.
 
-O algoritmo \ref{alg:algoritmo-exemplo3} é um exemplo de como apresentar ilustrações de acordo com essa norma. Qualquer outra ilustração deve ser apresentada de forma similar, mudando apenas o prefixo do título e a numeração. Veja mais detalhes no anexo \ref{anexoA} deste documento.
+As CNNs são compostas por três tipos de camadas. Essas são camadas convolucionais, camadas de agrupamento e camadas totalmente conectadas. Quando essas camadas são empilhadas, a arquitetura de uma CNN é formada. Uma CNN simplificada para classificação de imagens de números é ilustrada na Figura \ref{fig:arquitetura_cnn_mnist}.
 
-\begin{algorithm}[htbp]
-\caption{Exemplo de título de ilustração do tipo algoritmo}
-\label{alg:algoritmo-exemplo3}
-\begin{algorithmic}[1]
-\Procedure{MyProcedure}{}
-\State $passo-1$
-\State $passo-2$
-\State $passo-3$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $passo-n$
-\EndProcedure
-\end{algorithmic}
-\source{Marcelo Fantinato, 2015}
-\end{algorithm}
+\begin{figure}[H]
+    \centering
+    \caption{Arquitetura simples de uma CNN}
+    \includegraphics[scale=.55]{imagens/arquitetura_cnn_mnist.png}
+    \label{fig:arquitetura_cnn_mnist}
+    \source{\citeonline{o2015introduction}}
+\end{figure}
 
+A funcionalidade básica do exemplo da arquitetura acima pode ser dividido em quatro partes principais.
 
-\subsection{Outra seção terciária}
+\begin{enumerate}
+  \item Como encontrado em outras formas de ANNs, a camada de entrada manterá os valores de pixel da imagem \cite{o2015introduction}.
+  
+  \item A camada convolucional (\textit{convolutional layer}) determinará a saída dos neurônios que estão conectados às regiões locais da entrada por meio do cálculo do produto escalar entre seus pesos e a região conectada ao volume de entrada. A ReLu visa aplicar uma função de ativação elemento a elemento, como uma sigmoide, para a saída da ativação produzida pela camada anterior \cite{o2015introduction}.
+  
+  \item A camada de agrupamento (\textit{pooling layer}), então, simplesmente realizará a redução da resolução ao longo da dimensionalidade espacial da entrada fornecida, reduzindo ainda mais o número de parâmetros dentro dessa ativação \cite{o2015introduction}.
+  
+  \item As camadas totalmente conectadas (\textit{fully-connected layers}) realizarão as mesmas funções encontradas nas ANNs padrões e tentarão produzir pontuações de classe a partir das ativações, para serem usadas para classificação. Também é sugerido que a ReLu pode ser usado entre essas camadas, a fim de melhorar o desempenho \cite{o2015introduction}.
+\end{enumerate}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Nos tópicos a seguir será feito uma explicação breve de cada camada que participa da constituição da arquitetura de uma CNN.
 
-\subsection{Mais uma seção terciária}
+\subsection{Camada de convolução}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Como o nome indica, a camada convolucional desempenha um papel vital no funcionamento das CNNs. Os parâmetros das camadas se concentram no uso de \textit{kernels} que podem ser aprendidos. Esses \textit{kernels} são geralmente pequenos em dimensionalidade espacial, mas se espalham ao longo de toda a profundidade da entrada. Quando os dados atingem uma camada convolucional, a camada convolve cada filtro na dimensionalidade espacial da entrada para produzir um mapa de ativação 2D \cite{o2015introduction}.
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\subsection{Camada de agrupamento}
 
-O algoritmo \ref{alg:algoritmo-exemplo4} é um exemplo de como apresentar ilustrações de acordo com essa norma. Qualquer outra ilustração deve ser apresentada de forma similar, mudando apenas o prefixo do título e a numeração. Veja mais detalhes no anexo \ref{anexoA} deste documento.
+A camada de agrupamento opera sobre cada mapa de ativação na entrada e dimensiona sua dimensionalidade usando abordagens como a função de \textit{max pooling}. Na maioria das CNNs, eles vêm na forma de camadas de agrupamento máximo com núcleos de uma dimensionalidade de 2 × 2 aplicados com um passo de 2 ao longo das dimensões espaciais da entrada. Isso reduz o mapa de ativação para 25\% do tamanho original, enquanto é mantido o volume de profundidade em seu tamanho padrão. \cite{o2015introduction}.
 
-\begin{algorithm}[htbp]
-\caption{Exemplo de título bem grande de ilustração do tipo algoritmo, bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande bem grande}
-\label{alg:algoritmo-exemplo4}
-\begin{algorithmic}[1]
-\Procedure{MyProcedure}{}
-\State $passo-1$
-\State $passo-2$
-\State $passo-3$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $.$
-\State $passo-n$
-\EndProcedure
-\end{algorithmic}
-\source{Marcelo Fantinato, 2015}
-\end{algorithm}
+\subsection{Camada totalmente conectada}
 
+A camada totalmente conectada contém neurônios que estão diretamente conectados aos neurônios nas duas camadas adjacentes, sem estar conectado a nenhuma camada dentro delas. Isso é análogo ao modo como os neurônios são organizados nas formas tradicionais de uma ANN \cite{o2015introduction}.
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\section{Técnica de aprendizado por transferência}
 
-\section{Outra seção secundária}
+Segundo \citeonline{shao2014transfer}, a técnica de aprendizado por transferência \textit{(transfer learning)} é outro paradigma para evitar sobreajuste. O aprendizado por transferência funciona treinando uma rede em um elevado conjunto de dados, como \textit{ImageNet}, para então usar esses pesos como os pesos iniciais em uma nova tarefa de classificação. Normalmente, apenas os pesos nas camadas convolucionais da CNN pré-treinada são copiados, em vez de toda a rede. Isso é muito eficaz, pois muitos conjuntos de dados de imagem compartilham características espaciais de baixo nível que são melhor aprendidas com \textit{big data}.
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\section{Técnica de aumento de dados}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+Conforme abordado no artigo de \citeonline{shorten2019survey}, a técnica de aumento de dados (\textit{data augmentation}) abrange um conjunto de métodos que aumentam o tamanho dos conjuntos de dados de treinamento, nessa conformidade, melhores modelos de aprendizado profundo podem ser construídos com eles. Os algoritmos de aumento de imagem incluem transformações geométricas (\textit{geometric transformations}), aumentos de espaço de cores (\textit{color space augmentations}), filtros de \textit{kernel} (\textit{kernel filters}), misturas de imagens (\textit{mixing images}), apagamento aleatório (\textit{random erasing}), aumento de espaço de recursos (\textit{feature space augmentation}), treinamento adversário (\textit{adversarial training}), redes adversárias geradoras (\textit{generative adversarial networks}), transferência de estilo neural (\textit{neural style transfer}) e meta-aprendizagem (\textit{meta-learning}).
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\subsection{Transformações geométricas}
 
-\section{Mais uma seção secundária}
+Esta seção descreve as diferentes metodologias com base em transformações geométricas aplicadas em imagens. Os tipos descritos abaixo podem ser caracterizados por sua facilidade de implementação \cite{shorten2019survey}. Estes mecanismos foram divididos em 6 partes principais.
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\begin{enumerate}
+  \item Inversão (\textit{Flipping}): a inversão do eixo horizontal é muito mais comum do que a inversão do eixo vertical. Este aumento é um dos mais fáceis de implementar e provou ser útil em conjuntos de dados como CIFAR-10 e ImageNet. Em conjuntos de dados envolvendo reconhecimento de texto, como MNIST ou SVHN, esta não é uma transformação que preserva o rótulo \cite{shorten2019survey}.
+  
+  \item Espaço dos canais de cores (\textit{Color space}): os dados da imagem digital são geralmente codificados como um tensor da dimensão (altura × largura × canais de cor). A execução de aumentos no espaço dos canais de cores é outra estratégia muito prática de implementar. Aumentos de cor muito simples incluem o isolamento de um único canal de cor, como R, G ou B. Uma imagem pode ser rapidamente convertida em sua representação em um canal de cor isolando essa matriz e adicionando 2 matrizes zero dos outros canais de cor. Além disso, os valores RGB podem ser facilmente manipulados com operações de matriz simples para aumentar ou diminuir o brilho da imagem. Aumentos de cores mais avançados vêm da derivação de um histograma de cores que descreve a imagem. Alterar os valores de intensidade nesses histogramas resulta em alterações de iluminação, como o que é usado em aplicativos de edição de fotos \cite{shorten2019survey}.
+  
+  \item Corte (\textit{Cropping}): cortar imagens pode ser usado como uma etapa prática de processamento para dados de imagem com dimensões mistas de altura e largura, cortando um pedaço central de cada imagem. Além disso, o corte aleatório também pode ser usado para fornecer um efeito muito semelhante ao das traduções. O contraste entre o corte aleatório e as traduções é que o corte reduzirá o tamanho da entrada, como (256,256) → (224, 224), enquanto as traduções preservam as dimensões espaciais da imagem. Dependendo do limite de redução escolhido para corte, isso pode não ser uma transformação que preserva o rótulo \cite{shorten2019survey}.
+  
+  \item Rotação (\textit{Rotation}): os aumentos de rotação são feitos girando a imagem para a direita ou esquerda em um eixo entre 1° e 359°. A segurança dos aumentos de rotação é fortemente determinada pelo parâmetro de grau de rotação. Ligeiras rotações, como entre 1 e 20 ou -1 a -20, podem ser úteis em tarefas de reconhecimento de dígitos, como MNIST, mas à medida que o grau de rotação aumenta, o rótulo dos dados não é mais preservado após a transformação \cite{shorten2019survey}.
+  
+  \item Deslocamento (\textit{shifting}): deslocar as imagens para a esquerda, direita, para cima ou para baixo pode ser uma transformação muito útil para evitar viés posicional nos dados. Por exemplo, se todas as imagens em um conjunto de dados estiverem centralizadas, o que é comum em conjuntos de dados de reconhecimento de rosto, isso exigiria que o modelo também fosse testado em imagens perfeitamente centradas. Como a imagem original é traduzida em uma direção, o espaço restante pode ser preenchido com um valor constante, como 0 s ou 255 s, ou pode ser preenchido com ruído aleatório ou gaussiano. Esse preenchimento preserva as dimensões espaciais do pós-aumento da imagem \cite{shorten2019survey}.
+  
+  \item Injeção de ruído (\textit{Noise injection}): A injeção de ruído consiste em injetar uma matriz de valores aleatórios normalmente extraídos de uma distribuição gaussiana. Adicionar ruído às imagens pode ajudar CNNs a aprender recursos mais robustos \cite{shorten2019survey}.
+\end{enumerate}
 
-Texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo, texto de exemplo.
+\subsection{Aumento de espaço de cores}
 
+Os dados da imagem são codificados em 3 matrizes empilhadas, cada uma com tamanho altura × largura. Essas matrizes representam valores de pixel para um valor de cor RGB individual. Os enviesamentos de iluminação estão entre os desafios que ocorrem com mais frequência aos problemas de reconhecimento de imagem. Portanto, a eficácia das transformações do espaço de cores, também conhecidas como transformações fotométricas, é bastante intuitiva de conceituar. Uma solução rápida para imagens excessivamente claras ou escuras é percorrer as imagens e diminuir ou aumentar os valores de pixel em um valor constante. Outra manipulação rápida do espaço de cores é separar matrizes de cores RGB individuais. Outra transformação consiste em restringir os valores dos pixeis a um determinado valor mínimo ou máximo \cite{shorten2019survey}.
+
+\subsection{Filtros de kernel}
+
+Os filtros de \textit{kernel} são uma técnica muito popular no processamento de imagens para tornar as imagens mais nítidas e desfocadas. Esses filtros funcionam deslizando uma matriz n × n através de uma imagem com um filtro de desfoque Gaussiano, que resultará em uma imagem mais desfocada, ou um filtro de borda vertical ou horizontal de alto contraste que resultará em uma imagem mais nítida ao longo das bordas. Intuitivamente, desfocar imagens para aumento de dados pode levar a uma maior resistência a desfoque de movimento durante o teste. Além disso, aumentar a nitidez de imagens para aumento de dados pode resultar no encapsulamento de mais detalhes sobre objetos de interesse \cite{shorten2019survey}.
+
+\subsection{Mistura de imagens}
+
+Misturar imagens fazendo a média de seus valores de pixel é uma abordagem muito contra-intuitiva para o aumento de dados. As imagens produzidas com isso não parecerão uma transformação útil para um observador humano. No entanto, Ionue demonstrou como o emparelhamento de amostras pode ser desenvolvido em uma estratégia de aumento eficaz. Neste experimento, duas imagens são cortadas aleatoriamente de 256 × 256 a 224 × 224 e invertidas aleatoriamente na horizontal. Essas imagens são então mixadas calculando a média dos valores de pixel para cada um dos canais RGB. Isso resulta em uma imagem mista que é usada para treinar um modelo de classificação. O rótulo atribuído à nova imagem é o mesmo que a primeira imagem selecionada aleatoriamente \cite{shorten2019survey}.
+
+\subsection{Apagamento aleatório}
+
+O apagamento aleatório é outra técnica de aumento de dados inspirada nos mecanismos de regularização de \textit{dropout}. O apagamento aleatório pode ser visto como análogo ao \textit{dropout}, exceto no espaço de dados de entrada, em vez de embutido na arquitetura de rede. Esta técnica foi projetada especificamente para combater os desafios de reconhecimento de imagem devido à oclusão. Oclusão se refere a quando algumas partes do objeto não estão claras. O apagamento aleatório interromperá isso, forçando o modelo a aprender mais recursos descritivos sobre uma imagem, evitando que ele se ajuste a um determinado recurso visual da imagem \cite{shorten2019survey}.
+
+\subsection{Aumento de espaço de recursos}
+
+Aumentos de espaço de recurso podem ser implementados com codificadores automáticos se for necessário reconstruir as novas instâncias de volta no espaço de entrada. Também é possível aumentar o espaço de recursos isolando representações vetoriais de uma CNN. Isso é feito cortando a camada de saída da rede, de forma que a saída seja um vetor de baixa dimensão em vez de um rótulo de classe. As representações vetoriais são encontradas treinando um CNN e, em seguida, passando o conjunto de treinamento por meio do CNN truncado. Essas representações vetoriais podem ser usadas para treinar qualquer modelo de aprendizado de máquina de Naive Bayes, SVM ou de volta para uma rede multicamadas totalmente conectada \cite{shorten2019survey}.
+
+\subsection{Treinamento adversário}
+
+Uma das soluções para buscar o espaço de aumentos possíveis é o treinamento do adversário. O treinamento adversário é uma estrutura para o uso de duas ou mais redes com objetivos contrastantes codificados em suas funções de perda. O ataque adversário consiste em uma rede rival que aprende aumentos de imagens que resultam em classificações erradas em sua rede de classificação rival. Esses ataques adversários, restritos a injeções de ruído, têm sido surpreendentemente bem-sucedidos da perspectiva da rede adversária \cite{shorten2019survey}.
+
+\subsection{Redes adversárias geradoras}
+
+Outra estratégia interessante para o aumento de dados é a modelagem generativa. A modelagem gerativa refere-se à prática de criar instâncias artificiais a partir de um conjunto de dados de forma que retenham características semelhantes ao conjunto original. Os princípios de treinamento adversário discutidos anteriormente levaram a uma estrutura de modelagem generativa muito interessante e amplamente popular conhecida como GANs \cite{shorten2019survey}.
+
+\subsection{Transferência de estilo neural}
+
+A transferência de estilo neural é uma das demonstrações mais chamativas dos recursos de aprendizado profundo. A ideia geral é manipular as representações de imagens criadas nas CNNs. A transferência de estilo neural é provavelmente mais conhecido por suas aplicações artísticas, mas também serve como uma ótima ferramenta para aumento de dados. O algoritmo funciona manipulando as representações sequenciais em uma CNN de modo que o estilo de uma imagem possa ser transferido para outra, preservando seu conteúdo original \cite{shorten2019survey}.
+
+\subsection{Meta-aprendizagem}
+
+O conceito de meta-aprendizagem na pesquisa de Aprendizado Profundo geralmente se refere ao conceito de otimização de redes neurais com redes neurais \cite{shorten2019survey}.
+
+% ----------------------------------------------------------
+% CAPITULO - REVISÃO SISTEMÁTICA
+% ----------------------------------------------------------
 \chapter{Revisão sistemática}
 
 A revisão sistemática possibilita uma forma de analise e instrução a partir das informações dispostas pelos artigos disponíveis para uma pesquisa em especifico, assunto de tópico ou tema de interesse, sendo que deve ser utilizada uma sistemática de confiança, auditável e integra. \cite{garcia2020guidelines}.
 O desenvolvimento da revisão sistemática se baseia em um protocolo devidamente definido para assim trazer resultados válidos e detalhados, trazendo assim a possibilidade de análise e contradição destes resultados a partir do uso do protocolo determinado.
-
 
 \section{Objetivos da revisão}
 
@@ -1130,10 +1120,10 @@ A fase de planejamento é a determinação dos critérios de pesquisa para a for
 
 Estes processos estão representados na Figura \ref{fig:processo_revisao_sistematica}, na qual cada etapa do processo estão identificados com uma cor diferente.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
     \centering
     \caption{Diagrama do processo de revisão sistemática}
-    \includegraphics[scale=.40]{imagens/processo_revisao_sistematica.jpg}
+    \includegraphics[scale=.35]{imagens/processo_revisao_sistematica.jpg}
     \label{fig:processo_revisao_sistematica}
     \source{Danilo Assunção, 2021}
 \end{figure}
@@ -1170,7 +1160,7 @@ Os critérios utilizados para incluir ou excluir um trabalho nesta revisão fora
     \end{itemize}
 \end{itemize}
 
-De cada trabalho selecionado foram extraídos os seguintes atributos: Ano de publicação, País de afiliação dos pesquisadores, Técnicas de pré-processamento de imagens, Arquitetura das Redes Neurais Convolucionais, Métodos de classificação, Técnica de aprendizado por transferência, Técnicas de aumento de dados.
+De cada trabalho selecionado foram extraídos tais atributos como, Ano de publicação, País de afiliação dos autores, Técnicas de pré-processamento de imagens, Técnica de aprendizado por transferência, Técnicas de aumento de dados, Modelo de arquitetura da CNN e Modelo do classificador.
 
 Com a finalidade de poder encontrar possíveis lapsos nas pesquisas utilizadas, seguidamente da extração de dados, foi exercida uma averiguação sobre os principais obstáculos e propensões praticadas.
 
@@ -1181,14 +1171,6 @@ Os 31 trabalhos selecionados foram estudados e os seguintes atributos foram extr
 % -----------------------------------------
 % TABELA - SUMÁRIO DOS ARTIGOS ANALISADOS
 % -----------------------------------------
-%\begin{table}[h]
-%\centering
-%\caption{Sumário de todos os artigos analisados}
-%\label{tab:sumario_artigos_selecionados}
-%\resizebox{\textwidth}{!}{%
-%\footnotesize
-%\begin{tabular}{|p{1.5cm}|p{1.15cm}|p{1.2cm}|p{1.3cm}|p{1.3cm}|p{2.5cm}|p{2.5cm}|p{1.5cm}|}
-
 \begin{landscape}
 \begin{OnehalfSpacing}
 \begin{footnotesize}
@@ -1220,7 +1202,7 @@ Os 31 trabalhos selecionados foram estudados e os seguintes atributos foram extr
 \hline \multicolumn{8}{|r|}{{Continua na próxima página}} \\ \hline
 \endfoot
 
-\hline \multicolumn{8}{|c|}{Fonte: Danilo Assunção, 2021} \\ \hline
+\hline \multicolumn{8}{|c|}{Fonte - Danilo Assunção, 2021} \\ \hline
 \endlastfoot
 
 \cite{liu2020classification} &
