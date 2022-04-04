@@ -713,7 +713,7 @@ Keywords: Convolutional Neural Networks. CNN. Data augmentation. Transfer learni
 % CAPITULO - INTRODUÇÃO
 % ----------------------------------------------------------
 \chapter{Introdução}
-As plantações alimentícias possuem uma elevada dependência  em relação as abelhas, cuja a responsabilidade de polinização se encontra por volta de 70\% \cite{drauschke2007reliable}, ou seja, as abelhas economizam um serviço no qual custariam cerca de 65 bilhões de dólares anualmente \cite{pimentel1997economic}. Sendo elas também responsáveis por um papel de extrema valia para a natureza, onde a preservação de ecossistemas terrestres em conjunto de seu relacionamento com as abelhas \cite{lawton1998daily}. 
+As plantações alimentícias possuem uma elevada dependência em relação as abelhas, cuja a responsabilidade de polinização se encontra por volta de 70\% \cite{drauschke2007reliable}, ou seja, as abelhas economizam um serviço no qual custariam cerca de 65 bilhões de dólares anualmente \cite{pimentel1997economic}. Sendo elas também responsáveis por um papel de extrema valia para a natureza, onde a preservação de ecossistemas terrestres em conjunto de seu relacionamento com as abelhas \cite{lawton1998daily}. 
 
 Diante disso, o processo de classificação de espécies de abelhas acaba por ser um importante sistema para a sua preservação, por obter informações detalhadas e possibilitando estabelecer estratégias mais precisas de conservação de uma determinada espécie e também para uma localidade especifica \cite{goulson2015bee}. 
 
@@ -759,7 +759,7 @@ Neste contexto, uma imagem pode ser definida como um conjunto de pontos, chamado
 Com o uso da visão computacional, é possível reconhecer, manipular e refletir sobre os componentes que compõem uma imagem. Dessa forma, a visão computacional fornece ao computador uma infinidade de informações precisas a partir de imagens e vídeos, de forma que o computador consiga executar determinadas tarefas ao simular o comportamento visual do ser humano. Para um modelo de visão computacional, tem-se a composição de determinadas etapas, sendo elas, aquisição de imagem, pré-processamento, segmentação, extração de características e classificação:
 
 \begin{itemize}
-  \item Aquisição de imagem: trata-se do processo de obtenção de uma ou várias imagens a partir de dispositivos eletrônicos como câmeras digitais ou escâneres, onde os \textit{pixels} em cada imagem obtida ( bidimensional, tridimensional ou uma sequência de imagens) indica suas características de propriedades físicas capturadas.
+  \item Aquisição de imagem: trata-se do processo de obtenção de uma ou várias imagens a partir de dispositivos eletrônicos como câmeras digitais ou escâneres, onde os \textit{pixels} em cada imagem obtida (bidimensional, tridimensional ou uma sequência de imagens) indica suas características de propriedades físicas capturadas.
   \item Pré-processamento: é um processo realizado para ajuste ou normalização de imagens, além de preparar tais imagens para a utilização em algoritmos de aprendizado de máquina, tendo como exemplo, destaques de contornos, bordas, destaques de figuras geométricas, remoção de ruídos, normalização de tom da imagem, redução dos canais de cores para o tom de cinza, alteração do brilho e contraste e dentre outras técnicas.
   \item Segmentação: é um mecanismo que permite dividir em segmentos uma imagem, destacando objetos e alterando a representação da imagem, para que o processo de reconhecimento de padrões seja realizado com mais acurácia ou até mesmo para que este processo de reconhecimento de padrões seja possível.
   \item Extração de características: é um processo que constitui a extração das composições de uma imagem, obtendo matematicamente tais características como textura, bordas ou formatos.
@@ -914,7 +914,7 @@ A entrada é carregada geralmente na forma de um vetor multidimensional que ser�
 Existem diversas ramificações para determinação de um modelo de classificação para as redes neurais artificiais, normalmente os dois mais utilizados são aprendizado supervisionado e aprendizado não supervisionado.
 
 \section{Redes neurais convolucionais}
-Segundo \cite{yamashita2018convolutional}, as redes neurais convolucionais (CNN) são um tipo de modelo de aprendizado profundo para processamento de dados, inspiradas na organização do córtex visual animal e projetada para aprender de forma automática e adaptativa, hierarquias espaciais de recursos disponíveis em imagens digitais de padrões de baixo a alto nível. A CNN normalmente é composta de três tipos de camadas, convolução (\textit{convolutional layer}), agrupamento (\textit{pooling layer}) e camadas totalmente conectadas (\textit{fully-connected layer}) conforme o exemplo apresentado na Figura \ref{fig:arquitetura_cnn_mnist}.
+Segundo \citeonline{yamashita2018convolutional}, as redes neurais convolucionais (CNN) são um tipo de modelo de aprendizado profundo para processamento de dados, inspiradas na organização do córtex visual animal e projetada para aprender de forma automática e adaptativa, hierarquias espaciais de recursos disponíveis em imagens digitais de padrões de baixo a alto nível. A CNN normalmente é composta de três tipos de camadas, convolução (\textit{convolutional layer}), agrupamento (\textit{pooling layer}) e camadas totalmente conectadas (\textit{fully-connected layer}) conforme o exemplo apresentado na Figura \ref{fig:arquitetura_cnn_mnist}.
 
 \begin{figure}[H]
     \centering
@@ -934,7 +934,7 @@ Convolução é um tipo especializado de operação linear, usado para o process
 \begin{figure}[H]
     \centering
     \caption{Processo da convolução em dados de entrada}
-    \includegraphics[scale=.35]{imagens/conceitos_basicos/convolution_cnn.png}
+    \includegraphics[scale=.35]{imagens/conceitos_basicos/convolution_cnn.jpg}
     \label{fig:convolution_cnn}
     \source{\citeonline{o2015introduction}}
 \end{figure}
@@ -965,35 +965,25 @@ As saídas de uma operação linear, como a convolução, são passadas por uma 
   \label{equation_relu}
 \end{equation}
 
-Ambas as funções não lineares citadas podem ser melhor observadas a partir da Figura \ref{fig:nonlinearity_functions}, onde é possível observar suas composições do ponto de vista gráfico.
-
-\begin{figure}[H]
-    \centering
-    \caption{funções de ativação não lineares}
-    \includegraphics[scale=.35]{imagens/conceitos_basicos/nonlinearity_functions.png}
-    \label{fig:nonlinearity_functions}
-    \source{\citeonline{yamashita2018convolutional}}
-\end{figure}
-
 \subsection{Camada de agrupamento}
-O objetivo da camada de agrupamento (\textit{pooling layer}) é transformar a representação de característica conjunta em uma mais utilizável, que preserve informações importantes enquanto descarta detalhes irrelevantes \cite{yu2014mixed}. Ou seja, a camada de agrupamento visa reduzir gradualmente a dimensionalidade da representação e, assim, reduzir ainda mais o número de parâmetros e complexidade computacional do modelo \cite{o2015introduction}. A operação oferecida pelo agrupamento é tipicamente conhecido como \textit{downsampling}. Devido a natureza presente no processo de agrupamento, um filtro com tamanho acima de 3 geralmente reduzirá muito o desempenho do modelo, portanto, na maioria das CNNs, filtros são configurados com dimensionalidade de 2 x 2 com passada de 2 na camada de agrupamento, o que permitirá que a camada se estenda por toda a dimensionalidade espacial da entrada recebida, reduzindo o mapa de ativação para 25\% do tamanho original enquanto é mantido o volume de profundidade em seu tamanho padrão \cite{yamashita2018convolutional}. É importante notar que não há nenhum parâmetro aprendível em nenhuma das camadas de agrupamento, enquanto o tamanho do filtro, a passada (\textit{stride}) e o preenchimento (\textit{padding}) são também hiperparâmetros em operações de agrupamento, semelhantes às operações de convolução \cite{yamashita2018convolutional}. A camada de agrupamento ajusta sua dimensionalidade usando uma função de agrupamento, podendo ser funções como a \textit{Max Pooling} ou \textit{Average Pooling}.
+O objetivo da camada de agrupamento (\textit{pooling layer}) é transformar a representação de característica conjunta em uma mais utilizável, que preserve informações importantes enquanto descarta detalhes irrelevantes \cite{yu2014mixed}. Ou seja, a camada de agrupamento visa reduzir gradualmente a dimensionalidade da representação e, assim, reduzir ainda mais o número de parâmetros e complexidade computacional do modelo \cite{o2015introduction}. A operação oferecida pelo agrupamento é tipicamente conhecido como \textit{downsampling}. Devido a natureza presente no processo de agrupamento, um filtro com tamanho acima de 3 geralmente reduzirá muito o desempenho do modelo, portanto, na maioria das CNNs, filtros são configurados com dimensionalidade de 2 x 2 com passada de 2 na camada de agrupamento, o que permitirá que a camada se estenda por toda a dimensionalidade espacial da entrada recebida, reduzindo o mapa de ativação para 25\% do tamanho original enquanto é mantido o volume de profundidade em seu tamanho padrão \cite{yamashita2018convolutional}. É importante notar que não há nenhum parâmetro aprendível em nenhuma das camadas de agrupamento, enquanto o tamanho do filtro, a passada (\textit{stride}) e o preenchimento (\textit{padding}) são também hiperparâmetros em operações de agrupamento, semelhantes às operações de convolução \cite{yamashita2018convolutional}. A camada de agrupamento ajusta sua dimensionalidade usando uma função de agrupamento, podendo ser funções como a Agrupamento máximo ou Agrupamento médio.
 
-\textit{Max Pooling} é a forma mais popular de operação de agrupamento, que extrai \textit{patches} dos mapas de recursos de entrada, produz o valor máximo em cada \textit{patch} e descarta todos os outros valores \cite{yamashita2018convolutional}. O \textit{Max Pooling} com um filtro de tamanho 2 × 2 com uma passada de 2 é comumente usado na prática. Isso diminui a resolução da dimensão no plano dos mapas de recursos por um fator de 2, e, ao contrário da altura e da largura, a dimensão de profundidade dos mapas de recursos permanece inalterada \cite{yamashita2018convolutional}. Este método pode ser observado pela Figura \ref{fig:max_pooling}.
+Agrupamento máximo (\textit{max pooling}) é a forma mais popular de operação de agrupamento, que extrai \textit{patches} dos mapas de recursos de entrada, produz o valor máximo em cada \textit{patch} e descarta todos os outros valores \cite{yamashita2018convolutional}. Agrupamento máximo com um filtro de tamanho 2 × 2 com uma passada de 2 é comumente usado na prática. Isso diminui a resolução da dimensão no plano dos mapas de recursos por um fator de 2, e, ao contrário da altura e da largura, a dimensão de profundidade dos mapas de recursos permanece inalterada \cite{yamashita2018convolutional}. Este método pode ser observado pela Figura \ref{fig:max_pooling}.
 
 \begin{figure}[H]
     \centering
-    \caption{funções de ativação não lineares}
-    \includegraphics[scale=.45]{imagens/conceitos_basicos/max_pooling.png}
+    \caption{Agrupamento máximo}
+    \includegraphics[scale=.45]{imagens/conceitos_basicos/max_pooling.jpg}
     \label{fig:max_pooling}
     \source{Danilo Assunção, 2021}
 \end{figure}
 
-O \textit{Average Pooling} extrai \textit{patches} dos mapas de recursos de entrada e calcula a média destes elementos. Assim, enquanto o \textit{Max Pooling} fornece o recurso mais proeminente em um \textit{patch} específico do mapa de recursos, o \textit{Average Pooling} fornece a média de recursos presentes em um \textit{patch}, conforme a Figura \ref{fig:average_pooling}.
+O agrupamento médio (\textit{average pooling}) extrai \textit{patches} dos mapas de recursos de entrada e calcula a média destes elementos. Assim, enquanto o \textit{Max Pooling} fornece o recurso mais proeminente em um \textit{patch} específico do mapa de recursos, o Agrupamento Médio fornece a média de recursos presentes em um \textit{patch}, conforme a Figura \ref{fig:average_pooling}.
 
 \begin{figure}[H]
     \centering
-    \caption{funções de ativação não lineares}
-    \includegraphics[scale=.45]{imagens/conceitos_basicos/average_pooling.png}
+    \caption{Agrupamento médio}
+    \includegraphics[scale=.45]{imagens/conceitos_basicos/average_pooling.jpg}
     \label{fig:average_pooling}
     \source{Danilo Assunção, 2021}
 \end{figure}
@@ -1002,7 +992,7 @@ O \textit{Average Pooling} extrai \textit{patches} dos mapas de recursos de entr
 Os mapas de recursos de saída da convolução final ou camada de agrupamento, são normalmente achatados (\textit{flattened}), ou seja, transformados em uma matriz unidimensional de números (ou vetor) e conectados a uma ou mais camadas totalmente conectadas, também conhecidas como camadas densas, em que cada entrada é conectada a cada saída por um peso aprendível \cite{yamashita2018convolutional}. Ao passar pelas camadas de convolução e agrupamento, o conteúdo resultando deste processo anterior é mapeado por um subconjunto de camadas totalmente conectadas para as saídas finais da rede \cite{yamashita2018convolutional}. A camada final totalmente conectada normalmente tem o mesmo número de nós de saída que o número de classes. Cada camada totalmente conectada é seguida por uma função não linear \cite{yamashita2018convolutional}.
 
 \section{Técnica de aprendizado por transferência}
-Segundo \citeonline{shao2014transfer}, a técnica de aprendizado por transferência (\textit{transfer learning}) é um paradigma para evitar sobreajuste. O aprendizado por transferência funciona treinando uma rede em um elevado conjunto de dados, como \textit{ImageNet}, para então usar tais pesos como os pesos iniciais em uma nova tarefa de classificação. Normalmente, apenas os pesos nas camadas convolucionais da CNN pré-treinada são copiados, em vez de toda a rede. Sua eficácia é notada pois muitos conjuntos de dados de imagem compartilham características espaciais de baixo nível, que são melhor aprendidas com grandes quantidades de dados. O aprendizado por transferência possui dois métodos aplicáveis disponíveis na literatura, sendo eles, a transferência de características (\textit{feature learning}) e o ajuste fino (\textit{fine-tuning}).
+Segundo \citeonline{shao2014transfer}, a técnica de aprendizado por transferência (\textit{transfer learning}) é um paradigma para evitar sobreajuste. O aprendizado por transferência funciona treinando uma rede em um elevado conjunto de dados, como \textit{ImageNet}, para então usar tais pesos como os pesos iniciais em uma nova tarefa de classificação. Normalmente, apenas os pesos nas camadas convolucionais da CNN pré-treinada são copiados, em vez de toda a rede. Sua eficácia é notada pois muitos conjuntos de dados de imagem compartilham características espaciais de baixo nível, que são melhor aprendidas com grandes quantidades de dados. O aprendizado por transferência possui dois métodos aplicáveis disponíveis na literatura, sendo eles, a transferência de características e o ajuste fino.
 
 \subsection{Transferência de características}
 O método de transferência de características (\textit{feature learning}) é um processo de remoção das camadas totalmente conectadas de uma rede pré-treinada e ao mesmo tempo manter o restante da rede, cuja composição deste restante se dá em uma série de camadas de convolução e agrupamento, denominada base convolucional, funcionando como um extrator de recursos fixo \cite{li2017learning}. Nesse cenário, qualquer classificador de aprendizado de máquina podem ser adicionados no topo do extrator de recursos fixo, como exemplo as máquinas de vetores de suporte (SVM), florestas aleatórias (\textit{random forest}) e bem como as camadas totalmente conectadas usuais em CNNs, resultando em um processo de treinamento focado no classificador adicionado em um determinado conjunto de dados de interesse \cite{li2017learning}. Este mecanismo pode ser visto na Figura \ref{fig:fixed_features_extraction}.
@@ -1010,24 +1000,24 @@ O método de transferência de características (\textit{feature learning}) é u
 \begin{figure}[H]
     \centering
     \caption{Método de transferência de características}
-    \includegraphics[scale=.55]{imagens/conceitos_basicos/fixed_features_extraction.png}
+    \includegraphics[scale=.55]{imagens/conceitos_basicos/fixed_features_extraction.jpg}
     \label{fig:fixed_features_extraction}
     \source{Danilo Assunção, 2021}
 \end{figure}
 
 \subsection{Ajuste fino}
-O método de ajuste fino substitui as camadas totalmente conectadas do modelo pré-treinado por um novo conjunto de camadas totalmente conectadas para retreinar em um determinado conjunto de dados, aplicando também o ajuste fino como um todo ou apenas partes dos componentes na base convolucional pré-treinada \cite{li2017learning}. Todas as camadas na base convolucional podem ser ajustadas ou, alternativamente, algumas camadas anteriores podem ser corrigidas durante o ajuste fino do resto das camadas mais profundas \cite{li2017learning}. Isso é motivado pela observação de que os recursos da camada inicial terem um fator maior de generalização, enquanto os recursos posteriores tornam-se progressivamente mais específicos para um determinado conjunto de dados \cite{li2017learning}. Este mecanismo pode ser visto na Figura \ref{fig:fine_tuning_method}.
+O método de ajuste fino (\textit{fine-tuning}) substitui as camadas totalmente conectadas do modelo pré-treinado por um novo conjunto de camadas totalmente conectadas para retreinar em um determinado conjunto de dados, aplicando também o ajuste fino como um todo ou apenas partes dos componentes na base convolucional pré-treinada \cite{li2017learning}. Todas as camadas na base convolucional podem ser ajustadas ou, alternativamente, algumas camadas anteriores podem ser corrigidas durante o ajuste fino do resto das camadas mais profundas \cite{li2017learning}. Isso é motivado pela observação de que os recursos da camada inicial terem um fator maior de generalização, enquanto os recursos posteriores tornam-se progressivamente mais específicos para um determinado conjunto de dados \cite{li2017learning}. Este mecanismo pode ser visto na Figura \ref{fig:fine_tuning_method}.
 
 \begin{figure}[H]
     \centering
     \caption{Método de ajuste fino}
-    \includegraphics[scale=.55]{imagens/conceitos_basicos/fine_tuning_method.png}
+    \includegraphics[scale=.50]{imagens/conceitos_basicos/fine_tuning_method.jpg}
     \label{fig:fine_tuning_method}
     \source{Danilo Assunção, 2021}
 \end{figure}
 
 \section{Técnica de aumento de dados}
-Segundo \citeonline{shorten2019survey}, a técnica de aumento de dados (\textit{data augmentation}) abrange um conjunto de métodos que aumentam o tamanho dos conjuntos de dados de treinamento, nessa conformidade, melhores modelos de aprendizado profundo podem ser construídos com eles devido a sua capacidade em minimizar o sobreajuste. Os algoritmos de aumento de dados incluem transformações geométricas (\textit{geometric transformations}), modificação de espaço de cores (\textit{color space augmentations}), aplicação de máscara (\textit{kernel filters}), misturas de imagens (\textit{mixing images}), apagamento aleatório (\textit{random erasing}).
+Segundo \citeonline{shorten2019survey}, a técnica de aumento de dados (\textit{data augmentation}) abrange um conjunto de métodos que aumentam o tamanho dos conjuntos de dados de treinamento, nessa conformidade, melhores modelos de aprendizado profundo podem ser construídos com eles devido a sua capacidade em minimizar o sobreajuste. Os algoritmos de aumento de dados incluem transformações geométricas (\textit{geometric transformations}), transformações fotométricas (\textit{photometric transformations}), aplicação de máscara (\textit{kernel filters}), misturas de imagens (\textit{mixing images}), apagamento aleatório (\textit{random erasing}).
 
 \subsection{Transformações geométricas}
 Esta subseção descreve as diferentes metodologias com base em transformações geométricas aplicadas em imagens. Os tipos descritos abaixo podem ser caracterizados por sua facilidade de implementação \cite{shorten2019survey}. Estes mecanismos foram divididos em 6 partes principais:
@@ -1065,12 +1055,13 @@ Neste capítulo foi introduzido uma série de conceitos importantes que estão a
 % CAPITULO - REVISÃO SISTEMÁTICA
 % ----------------------------------------------------------
 \chapter{Revisão sistemática}
-A revisão sistemática possibilita uma forma de analise e instrução a partir das informações dispostas pelos artigos disponíveis para uma pesquisa em especifico, assunto de tópico ou tema de interesse, sendo que deve ser utilizada uma sistemática de confiança, auditável e integra. \cite{garcia2020guidelines}.
+A revisão sistemática possibilita uma forma de análise e instrução a partir das informações dispostas pelos artigos disponíveis para uma pesquisa em especifico, assunto de tópico ou tema de interesse, sendo que deve ser utilizada uma sistemática de confiança, auditável e integra \cite{garcia2020guidelines}.
 O desenvolvimento da revisão sistemática se baseia em um protocolo devidamente definido para assim trazer resultados válidos e detalhados, trazendo assim a possibilidade de análise e contradição destes resultados a partir do uso do protocolo determinado.
 
 \section{Objetivos da revisão}
 Na área de visão computacional há a aplicação de técnicas com objetivo de identificação de insetos, onde a técnica de processamento baseado em imagens e algoritmos que reconhecem padrões e classificam assim, automaticamente as espécies de insetos. Tal processamento vem modificando o tradicional modelo manual e descritivo de características morfológicas já fornecido por estudos taxonômicos para a identificação destes insetos. Sendo que, apenas especialistas como taxonomistas e técnicos qualificados podem identificar tais insetos com precisão, pois isso requer conhecimento especializado e obtido por meio de uma vasta experiência \cite{lim2017performance}.
-O aprendizado profundo tem sido amplamente utilizado em processamento de imagens, visão computacional e reconhecimento de padrões. Diferente dos métodos tradicionais de aprendizado de máquina, o modelo de aprendizado profundo pode aprender recursos automaticamente a partir de uma grande quantidade de imagens, e não requer um especialista com domínio na construção do extrator de características. \cite{liu2020classification}.
+
+O aprendizado profundo tem sido amplamente utilizado em processamento de imagens, visão computacional e reconhecimento de padrões. Diferente dos métodos tradicionais de aprendizado de máquina, o modelo de aprendizado profundo pode aprender recursos automaticamente a partir de uma grande quantidade de imagens, e não requer um especialista com domínio na construção do extrator de características \cite{liu2020classification}.
 
 As características extraídas das imagens são os fatores que mais influenciam na acurácia do classificador. Embora existam várias técnicas e ferramentas para extração de características automaticamente, ainda não se encontram trabalhos na literatura que avaliem estas técnicas de aprendizado profundo e nem ferramentas que as entreguem de forma sistemática.
 
@@ -1087,9 +1078,7 @@ Foi coordenada em quatro fases para a realização desta revisão sistemática, 
   \item Consolidação
 \end{enumerate}
 
-O planejamento consiste na criação do protocolo no qual as diretrizes da pesquisa serão baseadas. A condução é a execução da pesquisa e seleção de trabalhos de interesse, de acordo com os critérios de inclusão e exclusão definidos do protocolo. A extração é a fase na qual os artigos que foram selecionados são estudados e os dados importantes são separados. Em suma, temos a consolidação, na qual os dados são cruzados para gerar conhecimento e , assim, o artigo de revisão sistemática é escrito.
-
-A fase de planejamento é a determinação dos critérios de pesquisa para a formulação do protocolo. Na fase de condução é realizada a pesquisa de trabalhos, seguido da inclusão e exclusão destes trabalhos a partir dos itens baseados no protocolo. Já na fase de extração ocorre o estudo e a separação de dados importantes extraídos dos trabalhos selecionados. Por fim a fase de consolidação, onde é realizada a comparação entre os dados obtidos para o ganho de ciência, e seguidamente criar um artigo de revisão sistemática.
+O planejamento consiste na criação do protocolo no qual as diretrizes da pesquisa serão baseadas. A condução é a execução da pesquisa e seleção de trabalhos de interesse, de acordo com os critérios de inclusão e exclusão definidos do protocolo. A extração é a fase na qual os artigos que foram selecionados são estudados e os dados importantes são separados. Em suma, temos a consolidação, na qual os dados são cruzados para gerar conhecimento e, assim, o artigo de revisão sistemática é escrito.
 
 Estes processos estão representados na Figura \ref{fig:processo_revisao_sistematica}, na qual cada etapa do processo estão identificados com uma cor diferente.
 
@@ -1140,8 +1129,8 @@ De cada trabalho selecionado foram extraídos tais atributos como, Ano de public
 Com a finalidade de poder encontrar possíveis lapsos nas pesquisas utilizadas, seguidamente da extração de dados, foi exercida uma averiguação sobre os principais obstáculos e propensões praticadas.
 
 \section{Resultado da revisão sistemática}
-Os 31 trabalhos selecionados foram estudados e os seguintes atributos foram extraídos: técnica de extração de características, tipos de características extraídas, principal país de afiliação dos pesquisadores e ano de publicação. Um breve sumário dos trabalhos com os respectivos dados extraídos encontram-se no Tabela \ref{tab:sumario_artigos_selecionados}.
-
+Os 31 trabalhos selecionados foram estudados e os seguintes atributos foram extraídos: ano de publicação, país de afiliação dos autores, técnicas de pré-processamento de imagens, técnicas de aprendizado por transferência, técnicas de aumento de dados, modelo de arquitetura da CNN e modelo do classificador. Um breve sumário dos trabalhos com os respectivos dados extraídos encontram-se no Tabela \ref{tab:sumario_artigos_selecionados}.
+  
 % -----------------------------------------
 % TABELA - SUMÁRIO DOS ARTIGOS ANALISADOS
 % -----------------------------------------
@@ -1154,7 +1143,7 @@ Os 31 trabalhos selecionados foram estudados e os seguintes atributos foram extr
 \hline \textbf{Artigo} &
   \textbf{Ano de publicação} &
   \textbf{País de afiliação dos autores} &
-  \textbf{Téc. de pré- processamento de imagens} &
+  \textbf{Téc. de pré-processamento de imagens} &
   \textbf{Téc. de aprendizado por transferência} &
   \textbf{Téc. de aumento de dados} &
   \textbf{Modelo de arquitetura da CNN} &
@@ -1548,7 +1537,6 @@ Os métodos de classificação são aplicados nas últimas camadas das Redes Neu
     \source{Danilo Assunção, 2021}
 \end{figure}
 
-
 A partir do processo de convolução da Rede Neural Convolucional, é seguido o agrupamento e divisão das imagens em recursos. Em sequência desse processo, tais recursos são utilizados para alimentar a estrutura de rede neural totalmente conectada, pode direcionar a decisão de classificação final \cite{rauf2019visual}. 
 
 Decorrendo em 78,79\% (26) de utilização apresentada nos artigos e representada como ``Camada totalmente conectada''. Nos demais cenários onde a rede neural convolucional é utilizada somente para extração de características, é visto a aplicação conjunta com algoritmos de SVM (Máquina de vetores de suporte) com \textit{kernel} Linear 9,09\% (3), RBF (Função de Base Radial) 6,06\% (2) e Polinomial 3,03\% (1). Por fim, houve apenas uma implementação do algoritmo \textit{Random Forest} ocupando 3,03\% (1).
@@ -1568,6 +1556,68 @@ No conjunto de treinamento e validação, serão utilizadas as imagens de asas d
     \label{fig:02_mel_trigona_spinipes}
     \source{Danilo Assunção, 2021}
 \end{figure}
+
+O conjunto de dados disponibilizado é constituído por um total de 904 imagens, sendo estas imagens uma representação digital das asas de várias espécies de abelhas. A partir deste conjunto de dados é apresentado um total de 23 gêneros que agrupam as espécies de abelhas abordadas e um total de 48 classes, onde cada classe representa uma espécie específica de abelha. As espécies e quantidade de imagens para cada uma delas pode ser visto na Tabela \ref{tab:conjunto_dados_abelhas}.
+
+\begin{longtable}[c]{|l|l|}
+\caption{Conjunto de dados das asas de abelhas}
+\label{tab:conjunto_dados_abelhas}\\
+\hline
+\textbf{Espécie da abelha}      & \textbf{Quantidade de imagens disponíveis} \\ \hline
+\endfirsthead
+%
+\endhead
+%
+Apis Cerana                     & 20                                         \\ \hline
+Apis Dorsata                    & 20                                         \\ \hline
+Apis Florea                     & 20                                         \\ \hline
+Apis Mellifera                  & 19                                         \\ \hline
+Bombusbrasiliensis              & 20                                         \\ \hline
+Bombuspauloensis                & 11                                         \\ \hline
+Eg. Annectans                   & 19                                         \\ \hline
+Eg. Truncata Stateresa           & 15                                         \\ \hline
+Eug Eufriesea Violacea          & 20                                         \\ \hline
+Eug Euglossa Mixta              & 19                                         \\ \hline
+Eulaema Nigrita Caetetus        & 10                                         \\ \hline
+Exaerete Smaragdina             & 8                                          \\ \hline
+Mel Austroplebeia Australis     & 18                                         \\ \hline
+Mel Austroplebeia Cincta        & 20                                         \\ \hline
+Mel Austroplebeia Essingtoni    & 20                                         \\ \hline
+Mel Austroplebeia Striped       & 20                                         \\ \hline
+Mel Austroplebeia Symei         & 20                                         \\ \hline
+Mel Axestotrigona Ferruginea    & 20                                         \\ \hline
+Mel Dactylurina Staudingeri     & 20                                         \\ \hline
+Mel Geotrigona Sp               & 16                                         \\ \hline
+Mel Lestrimellita Limao         & 19                                         \\ \hline
+Mel Melipona Bicolor            & 14                                         \\ \hline
+Mel Melipona Flavolineata       & 20                                         \\ \hline
+Mel Melipona Mandacaia          & 20                                         \\ \hline
+Mel Melipona Quadrifasciata     & 20                                         \\ \hline
+Mel Melipona Scutellaris        & 20                                         \\ \hline
+Mel Melipona Seminigra          & 20                                         \\ \hline
+Mel Melipona Subnitida          & 19                                         \\ \hline
+Mel Mourella Caerulea           & 20                                         \\ \hline
+Mel Nannotrigona Testaceicornis & 20                                         \\ \hline
+Mel Paratrigona Subnuda         & 20                                         \\ \hline
+Mel Partamona Helleri           & 20                                         \\ \hline
+Mel Plebeia Droryana            & 20                                         \\ \hline
+Mel Plebeia Flavocincta         & 19                                         \\ \hline
+Mel Plebeia Nigriceps           & 20                                         \\ \hline
+Mel Plebeia Pugnax              & 20                                         \\ \hline
+Mel Plebeia Remota              & 20                                         \\ \hline
+Mel Plebeia Sp                  & 20                                         \\ \hline
+Mel Scaptotrigona Bipunctata    & 20                                         \\ \hline
+Mel Scaptotrigona Depilis       & 20                                         \\ \hline
+Mel Scaptotrigona Tubi          & 19                                         \\ \hline
+Mel Scaura Latitarsis           & 20                                         \\ \hline
+Mel Schwarziana Quadripunctata  & 19                                         \\ \hline
+Mel Trigona Spinipes            & 20                                         \\ \hline
+Meliponula Bocandei             & 20                                         \\ \hline
+Tripoxylon Aurifrons            & 20                                         \\ \hline
+Tripoxylon Lactitarse           & 20                                         \\ \hline
+Tripoxylon Rogenhoferi          & 20                                         \\ \hline
+\end{longtable}
+\source{Danilo Assunção, 2021}
 
 Para levantar o estado da arte das técnicas de aprendizado por transferência, aumento de dados e CNN, foi elaborada uma revisão sistemática utilizando os conceitos aplicados em \citeonline{liu2020classification}.
 
@@ -1603,7 +1653,8 @@ A seguir são apresentados um cronograma representado pela Tabela \ref{tab:crono
   \item Revisão bibliográfica: uma revisão sistemática da literatura foi realizada a fim de identificar o estado da arte do uso de CNN, com técnicas que proveem um mecanismo que permita o uso deste tipo de rede em diversos cenários para a identificação de espécies;
   \item Teste de proficiência em inglês: realização da prova de proficiência em inglês solicitada pelo programa;
   \item Qualificação: realização do exame de qualificação;
-  \item Preparação dos dados: levantamento de todo o conjunto de dados das abelhas disponível contendo imagens de suas asas e aplicação de possíveis técnicas de aumento de dados para ampliação deste conteúdo.
+  \item Publicação de artigo: publicação de um artigo científico demonstrando os resultados obtidos no processo de identificação de abelhas com o uso de CNN;
+  \item Preparação dos dados: levantamento de todo o conjunto de dados das abelhas disponível contendo imagens de suas asas e aplicação de possíveis técnicas de aumento de dados para ampliação deste conteúdo;
   \item Preparação do modelo de CNN: definição e desenvolvimento de um algoritmo de CNN para o modelo;
   \item Extração de características: aplicação da CNN desenvolvida para extração de características, podendo ser utilizadas técnicas de aprendizado por transferência;
   \item Classificação: compilado do resultado obtido no passo de extração em um algoritmo de classificação supervisionado estabelecido na CNN;
@@ -1621,27 +1672,28 @@ A seguir são apresentados um cronograma representado pela Tabela \ref{tab:crono
 \caption{Cronograma}
 \label{tab:cronograma}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
-\multicolumn{2}{|l|}{Atividade}     & \multicolumn{5}{l|}{2020} & \multicolumn{12}{l|}{2021}                       & \multicolumn{4}{l|}{2022} \\ \hline
-\#   & Descrição                       & 8  & 9  & 10  & 11  & 12  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 1    & 2    & 3    & 4    \\ \hline
-1  & Revisão bibliográfica           & x  & x  & x   & x   & x   & x & x & x & x &   &   &   &   &   &    &    &    &      &      &      &      \\ \hline
-2  & Teste de proficiência em inglês &    &    &     &     &     &   &   &   &   & x &   &   &   &   &    &    &    &      &      &      &      \\ \hline
-3  & Qualificação                    &    &    &     &     &     &   &   &   & x &   &   &   &   &   &    &    &    &      &      &      &      \\ \hline
-4  & Preparação dos dados            &    &    &     &     &     &   &   &   &   & x & x & x & x & x &    &    &    &      &      &      &      \\ \hline
-5  & Preparação do modelo CNN        &    &    &     &     &     &   &   &   &   &   &   & x & x & x &    &    &    &      &      &      &      \\ \hline
-6  & Extração de características     &    &    &     &     &     &   &   &   &   &   &   &   &   & x & x  & x  &    &      &      &      &      \\ \hline
-7  & Classificação                   &    &    &     &     &     &   &   &   &   &   &   &   &   & x & x  & x  &    &      &      &      &      \\ \hline
-8  & Avaliação                       &    &    &     &     &     &   &   &   &   &   &   &   &   &   &    & x  & x  &      &      &      &      \\ \hline
-9  & Escrita da dissertação            &    &    &     &     &     &   &   &   &   &   &   & x & x & x & x  & x  & x  & x    & x    & x    &      \\ \hline
-10 & Defesa                          &    &    &     &     &     &   &   &   &   &   &   &   &   &   &    &    &    &      &      &      & x    \\ \hline
+\multicolumn{2}{|l|}{Atividade}      & \multicolumn{5}{l|}{2020} & \multicolumn{12}{l|}{2021}                       & \multicolumn{5}{l|}{2022} \\ \hline
+\# & Descrição                       & 8  & 9  & 10  & 11  & 12  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 1   & 2   & 3   & 4  & 5  \\ \hline
+1  & Revisão bibliográfica           & x  & x  & x   & x   & x   & x & x & x & x &   &   &   &   &   &    &    &    &     &     &     &    &    \\ \hline
+2  & Teste de proficiência em inglês &    &    &     &     &     &   &   &   &   & x &   &   &   &   &    &    &    &     &     &     &    &    \\ \hline
+3  & Qualificação                    &    &    &     &     &     &   &   &   &   &   & x &   &   &   &    &    &    &     &     &     &    &    \\ \hline
+4  & Publicação de artigo            &    &    &     &     &     &   &   &   &   &   &   &   &   &   &    & x  &    &     &     &     &    &    \\ \hline
+5  & Preparação dos dados            &    &    &     &     &     &   &   &   &   & x & x & x & x & x &    &    &    &     &     &     &    &    \\ \hline
+6  & Preparação do modelo CNN        &    &    &     &     &     &   &   &   &   &   & x & x & x & x &    &    &    &     &     &     &    &    \\ \hline
+7  & Extração de características     &    &    &     &     &     &   &   &   &   &   &   &   &   & x & x  & x  &    &     &     &     &    &    \\ \hline
+8  & Classificação                   &    &    &     &     &     &   &   &   &   &   &   &   &   & x & x  & x  &    &     &     &     &    &    \\ \hline
+9  & Avaliação                       &    &    &     &     &     &   &   &   &   &   &   &   &   &   &    & x  & x  &     &     &     &    &    \\ \hline
+10 & Texto de dissertação            &    &    &     &     &     &   &   &   &   &   &   &   &   &   & x  & x  & x  & x   & x   & x   & x  &    \\ \hline
+10 & Defesa                          &    &    &     &     &     &   &   &   &   &   &   &   &   &   &    &    &    &     &     &     &    & x  \\ \hline
 \end{tabular}%
 }
 \source{Danilo Assunção, 2021}
 \end{table}
 
-\chapter{Considerações finais}
-Este trabalho propõe a utilização de visão computacional para a construção de um modelo de CNN, o qual realize o reconhecimento de espécies de abelhas a partir da morfologia de suas asas presentes em imagens digitais. Pretende-se utilizar conjunto a este mecanismo, técnicas de aumento de dados ou aprendizado por transferência. Inicialmente, foi realizada uma revisão sistemática da literatura, que identificou as técnicas de aumento de dados e aprendizado por transferência utilizando CNN para tarefas de reconhecimento de espécies. Esta revisou permitiu o entendimento das diversas possibilidades disponíveis para a aplicação de técnicas de aprendizado profundo, mesmo quando se tem poucos dados disponíveis, o que permite uma maior autonomia e flexibilidade no colhimento das características das imagens, junto a uma automatização como um todo no processo de reconhecimento. Com este método, espera-se obter bons resultados na classificação das espécies de abelhas, utilizando um modelo de CNN como automatizador de todo o processo de extração e classificação deste domínio.
+\section{Considerações finais}
+Este trabalho propõe a utilização de visão computacional para a construção de um modelo de CNN, o qual realize o reconhecimento de espécies de abelhas a partir da morfologia de suas asas presentes em imagens digitais. Pretende-se utilizar conjunto a este mecanismo, técnicas de aumento de dados ou aprendizado por transferência. Inicialmente, foi realizada uma revisão sistemática da literatura, que identificou as técnicas de aumento de dados e aprendizado por transferência utilizando CNN para tarefas de reconhecimento de espécies. Esta revisão permitiu o entendimento das diversas possibilidades disponíveis para a aplicação de técnicas de aprendizado profundo, mesmo quando se tem poucos dados disponíveis, o que permite uma maior autonomia e flexibilidade no colhimento das características das imagens, junto a uma automatização como um todo no processo de reconhecimento. Com este método, espera-se obter bons resultados na classificação das espécies de abelhas, utilizando um modelo de CNN como automatizador de todo o processo de extração e classificação deste domínio.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
